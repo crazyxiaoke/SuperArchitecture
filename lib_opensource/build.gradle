@@ -1,0 +1,50 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion build_versions.compile_sdk
+    buildToolsVersion build_versions.build_tools
+
+    defaultConfig {
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    api fileTree(dir: 'libs', include: ['*.jar'])
+    api deps.support.appcompat
+    api deps.support.constraint
+    testImplementation deps.test.junit
+    androidTestImplementation deps.test.runner
+    androidTestImplementation deps.test.espresso
+    api deps.okhttp.okhttp3
+    api deps.okhttp.logging_interceptor
+    api deps.retrofit2.retrofit2
+    api deps.retrofit2.converter_gson
+    api(deps.retrofit2.adapter_rxjava2, {
+        exclude group: 'io.reactivex', module: 'rxjava'
+    })
+    api deps.rxjava2.rxjava
+    api deps.rxjava2.rxandroid
+
+    //跳转路由
+    api deps.arouter.arouter_api
+    annotationProcessor deps.arouter.arouter_compiler
+}
