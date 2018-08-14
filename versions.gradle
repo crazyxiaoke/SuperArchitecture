@@ -20,8 +20,8 @@ versions.rxjava2="2.2.0"
 versions.rxandroid="2.0.2"
 versions.arouter_api="1.4.0"
 versions.arouter_compiler="1.2.0"
-
-
+versions.swipebacklayout="1.1.0"
+versions.andPermission="2.0.0-rc11"
 def deps = [:]
 
 def support = [:]
@@ -56,6 +56,8 @@ arouter.arouter_api="com.alibaba:arouter-api:$versions.arouter_api"
 arouter.arouter_compiler="com.alibaba:arouter-compiler:$versions.arouter_compiler"
 deps.arouter=arouter
 
+deps.swipebacklayout="me.imid.swipebacklayout.lib:library:$versions.swipebacklayout"
+deps.andPermission="com.yanzhenjie:permission:$versions.andPermission"
 deps.android_gradle_plugin = "com.android.tools.build:gradle:$versions.android_gradle_plugin"
 
 ext.deps = deps

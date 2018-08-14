@@ -12,6 +12,8 @@
             <option value="$PROJECT_DIR$/lib_common" />
             <option value="$PROJECT_DIR$/lib_common_ui" />
             <option value="$PROJECT_DIR$/lib_opensource" />
+            <option value="$PROJECT_DIR$/module_live" />
+            <option value="$PROJECT_DIR$/module_main" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
